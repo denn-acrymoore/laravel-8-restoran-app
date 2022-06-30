@@ -1,0 +1,283 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+    background: #fc7878;
+}
+
+/* OUTLINE
+1.HEADER
+2.FORM CONTAINER
+3.LOGIN BUTTON
+4.REGISTER BUTTON
+
+*/
+
+.text-danger {
+    color: rgb(172, 2, 2);
+    font-size: 13px;
+    position: relative;
+    top: -1rem;
+    left: 1.3rem;
+}
+
+.text-danger-sex {
+    color: rgb(172, 2, 2);
+    font-size: 13px;
+    position: relative;
+    /* top: -1rem; */
+    left: 1.3rem;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    word-wrap: break-word;
+    font-family: "kanit", sans-serif;
+    margin-top: 20px;
+}
+
+.header h2 {
+    display: block;
+}
+
+@media screen and (max-width: 414px) {
+    .header {
+        width: 200px;
+        text-align: center;
+        /* margin-top: 100px; */
+    }
+}
+
+.name-section {
+    width: 200px;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.name-section input {
+    width: 100%;
+    height: 100%;
+    color: #595f6e;
+    padding-top: 20px;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+/* #f74848 */
+.name-section label {
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid black;
+}
+
+.name-section label::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #ffc500;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+}
+
+.content-name {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.name-section input:focus + .label-name .content-name,
+.name-section input:not(:placeholder-shown) + .label-name .content-name {
+    transform: translateY(-150%);
+    font-size: 14px;
+    color: #ffc500;
+}
+/* #5fa8d3 */
+
+.name-section input:focus + .label-name::after,
+.name-section input:not(:placeholder-shown) + .label-name::after {
+    transform: translateX(0%);
+}
+
+/* FORM CONTAINER */
+
+.FormContainer {
+    width: 24rem;
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    background: #eb9c35bd;
+    box-shadow: 5px 10px #2e0b0b;
+    position: relative;
+    margin-top: 20px;
+}
+
+/* LOGIN BUTTON */
+
+.btn1 {
+    font-family: Hack, monospace;
+    background: #bbff00;
+    color: #1d1d1d;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 1.5rem;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 10px;
+    width: auto;
+    position: absolute;
+    bottom: -150px;
+    min-width: 250px;
+}
+.btn1::after {
+    content: url(../images/bx-log-in.svg);
+    /* font-family: "Font Awesome 5 Pro"; */
+    font-weight: 900;
+    position: absolute;
+    left: 80%;
+    top: 54%;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+.btn1:hover {
+    background: #ffc500;
+    transition: all 0.5s;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px #c29502c5;
+    padding: 1.5rem 3rem 1.5rem 1.5rem;
+    color: #000;
+}
+
+.btn1:hover::after {
+    opacity: 1;
+    transition: all 0.5s;
+    color: #ffffff;
+}
+@media screen and (max-width: 414px) {
+    .FormContainer {
+        margin-top: 0px;
+    }
+}
+
+/* REGISTER BUTTON */
+
+.btn2 {
+    font-family: Hack, monospace;
+    background: #bbff00;
+    color: #1d1d1d;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 1.5rem;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 10px;
+    width: auto;
+    position: absolute;
+    bottom: -265px;
+    min-width: 250px;
+}
+
+a.btn2,
+a.btn3 {
+    text-decoration: inherit;
+}
+
+.btn2::after {
+    content: url(../images/bxs-chevrons-right.svg);
+    background-size: 20px 20px;
+    /* font-family: "Font Awesome 5 Pro"; */
+    font-weight: 900;
+    position: absolute;
+    left: 80%;
+    top: 54%;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+.btn2:hover,
+.btn3:hover {
+    background: #2b2bff;
+    transition: all 0.5s;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px #0000ff61;
+    padding: 1.5rem 3rem 1.5rem 1.5rem;
+    color: #ffffff;
+}
+.btn2:hover::after,
+.btn3:hover::after {
+    opacity: 1;
+    transition: all 0.5s;
+    color: #ffffff;
+}
+
+.btn3 {
+    font-family: Hack, monospace;
+    background: #bbff00;
+    color: #1d1d1d;
+    cursor: pointer;
+    font-size: 2em;
+    padding: 1.5rem;
+    border: 0;
+    transition: all 0.5s;
+    border-radius: 10px;
+    width: auto;
+    position: absolute;
+    bottom: -380px;
+    min-width: 250px;
+}
+
+.btn3::after {
+    content: url(../images/bx-home.svg);
+    background-size: 20px 20px;
+    /* font-family: "Font Awesome 5 Pro"; */
+    font-weight: 900;
+    position: absolute;
+    left: 80%;
+    top: 54%;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+.BirthdayInput {
+    display: block;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.radio-btn {
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+    margin-left: 20px;
+}
